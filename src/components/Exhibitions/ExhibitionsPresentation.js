@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
-import ExhibitContainter from '../Exhibits/ExhibitContainer'
+import ExhibitContainer from '../Exhibits/ExhibitContainer'
 
 class ExhibitPresentation extends Component {
 
     render() {
         let exhibits = this.props.data.map(exhibit => {
-            console.log(exhibit)
+            // console.log(exhibit.id)
             return (
-                <ExhibitContainter
+                <ExhibitContainer
                     key={exhibit.id}
                     title={exhibit.title}
                     start={exhibit.date_start}
