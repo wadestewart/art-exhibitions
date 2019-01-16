@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 class ExhibitionsCard extends Component {
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
 
         return (
-            <div>
-                <h1>{this.props.title}</h1>
+            <div onClick={this.props.onDetailsClick}>
+                <h2>{this.props.title}</h2>
             </div>
         )
     }

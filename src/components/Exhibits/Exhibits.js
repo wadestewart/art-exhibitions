@@ -1,18 +1,12 @@
 import React, { Component } from 'react'
 
-// import { API } from '../../config'
-
-class ExhibitContainer extends Component {
+class Exhibit extends Component {
     constructor() {
         super()
 
         this.state = {
             images: []
         }
-    }
-
-    componentDidMount = () => {
-        fetch(``)
     }
 
     render() {
@@ -25,4 +19,4 @@ class ExhibitContainer extends Component {
     }
 }
 
-export default ExhibitContainer
+export default Exhibit

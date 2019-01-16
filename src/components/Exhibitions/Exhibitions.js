@@ -5,7 +5,7 @@ import ExhibitionCard from './ExhibitionCard'
 class Exhibitions extends Component {
 
   render() {
-    let exhibits = this.props.data.map(exhibit => {
+    let exhibits = this.props.exhibitions.map(exhibit => {
       // console.log(exhibit)
       return (
         <ExhibitionCard
@@ -15,6 +15,7 @@ class Exhibitions extends Component {
           text={exhibit.text}
           start={exhibit.date_start}
           end={exhibit.date_end}
+          onDetailsClick={() => this.props.onDetailsClick(exhibit)}
         />
       )
     })

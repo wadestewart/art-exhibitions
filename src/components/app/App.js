@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { API } from '../../config'
 import Exhibitions from '../Exhibitions/Exhibitions'
+import Exhibits from '../Exhibits/Exhibits';
 
 class App extends Component {
   constructor() {
@@ -10,9 +11,10 @@ class App extends Component {
     this.handleDetailsClick = this.handleDetailsClick.bind(this)
 
     this.state = {
-        current: {},
-        images:[],
-        exhibitions: []
+        current:      {},
+        images:       [],
+        exhibits:     [],
+        exhibitions:  []
     }
   }
 
@@ -20,7 +22,7 @@ class App extends Component {
     fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibit.id}&page=1&per_page=100`)
       .then(res => res.json())
       .then(data => {
-          console.log(data)
+          this.setState({ exhibits: data.objects })
       })
       .catch(err => console.log(err))
   }
@@ -30,26 +32,40 @@ class App extends Component {
     fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=${API.apiKey}&page=1&per_page=100`)
       .then(res => res.json())
       .then(data => {
-        // console.log(data)
         this.setState({ exhibitions: data.exhibitions})
       })
       .catch(err => console.log(err))
   }
 
   render() {
-    // console.log(this.state.exhibitions)
-    let data = this.state.exhibitions
-    let card =
-      this.state.exhibitions.length !== 0 ?
-      <Exhibitions
-        data={data}
-        onDetailsClick={this.handleDetailsClick}
-      /> :
-      null
+    let exhibits = this.state.exhibits
+    let exhibitions = this.state.exhibitions
+    const conditionalRender = 
+      this.state.exhibits.length === 0 ?
+        this.state.exhibitions.length !== 0 ?
+          <Exhibitions
+            exhibitions={exhibitions}
+            onDetailsClick={this.handleDetailsClick}
+          />
+        :
+          null
+      :
+        <Exhibits
+          exhibit={exhibits}
+        />
+    // let card =
+    //   this.state.exhibitions.length !== 0 ?
+    //     <Exhibitions
+    //       exhibitions={exhibitions}
+    //       exhibit={exhibit}
+    //       onDetailsClick={this.handleDetailsClick}
+    //     />
+    //   :
+    //     null
 
     return (
       <div>
-        {card}
+        {conditionalRender}
       </div>
     )
   }
