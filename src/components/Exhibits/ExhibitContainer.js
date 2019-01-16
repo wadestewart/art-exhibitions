@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
 
-import { API } from '../../config'
+// import { API } from '../../config'
 
 class ExhibitContainer extends Component {
-    // constructor() {
-    //     super()
-    //     console.log(this.props)
-    // }
+    constructor() {
+        super()
+
+        this.state = {
+            images: []
+        }
+    }
+
+    componentDidMount = () => {
+        fetch(``)
+    }
+
     render() {
         console.log(this.props)
         return (
