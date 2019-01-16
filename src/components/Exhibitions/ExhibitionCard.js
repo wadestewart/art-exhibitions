@@ -1,16 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class ExhibitionsCard extends Component {
-
-    render() {
-        // console.log(this.props)
-
-        return (
-            <div onClick={this.props.onDetailsClick}>
-                <h2>{this.props.title}</h2>
-            </div>
-        )
-    }
+function ExhibitionsCard (props) {
+    return (
+        <div onClick={props.onDetailsClick}>
+            <h2>{props.title}</h2>
+        </div>
+    )
 }
 
 export default ExhibitionsCard

@@ -1,20 +1,27 @@
 import React, { Component } from 'react'
 
-class Exhibit extends Component {
-    constructor() {
-        super()
+import ExhibitsCard from './ExhibitsCard'
 
-        this.state = {
-            images: []
-        }
-    }
+class Exhibit extends Component {
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
+        const exhibits = this.props.exhibits.map(exhibit => {
+            // console.log(exhibit.images[0].z.url)
+            const imgUrl = exhibit.images[0].z.url
+            return (
+                <ExhibitsCard
+                    key={exhibit.id}
+                    title={exhibit.title}
+                    image={imgUrl}
+                />
+            )
+        })
+
         return (
             <div>
-
-            </div>
+                {exhibits}
+            </div>  
         )
     }
 }

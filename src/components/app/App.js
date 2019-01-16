@@ -11,15 +11,13 @@ class App extends Component {
     this.handleDetailsClick = this.handleDetailsClick.bind(this)
 
     this.state = {
-        current:      {},
-        images:       [],
         exhibits:     [],
         exhibitions:  []
     }
   }
 
-  handleDetailsClick = (exhibit) => {
-    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibit.id}&page=1&per_page=100`)
+  handleDetailsClick = (exhibition) => {
+    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibition.id}&page=1&per_page=100`)
       .then(res => res.json())
       .then(data => {
           this.setState({ exhibits: data.objects })
@@ -38,8 +36,10 @@ class App extends Component {
   }
 
   render() {
-    let exhibits = this.state.exhibits
-    let exhibitions = this.state.exhibitions
+
+    const exhibits = this.state.exhibits
+    const exhibitions = this.state.exhibitions
+
     const conditionalRender = 
       this.state.exhibits.length === 0 ?
         this.state.exhibitions.length !== 0 ?
@@ -51,17 +51,8 @@ class App extends Component {
           null
       :
         <Exhibits
-          exhibit={exhibits}
+          exhibits={exhibits}
         />
-    // let card =
-    //   this.state.exhibitions.length !== 0 ?
-    //     <Exhibitions
-    //       exhibitions={exhibitions}
-    //       exhibit={exhibit}
-    //       onDetailsClick={this.handleDetailsClick}
-    //     />
-    //   :
-    //     null
 
     return (
       <div>
