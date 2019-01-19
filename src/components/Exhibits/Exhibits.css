@@ -1,0 +1,33 @@
+.exhibit-card {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.exhibit-text {
+    flex: 1 0 33.33333333%;
+    padding: 0 1rem;
+}
+
+.title {
+    color: #f00;
+    margin: 0.5rem 0;
+}
+
+.info {
+    color: #50c878;
+    margin: 0.5rem 0;
+}
+
+.medium {
+    color:  #00f;
+    margin: 0.5rem 0;
+}
+
+.medium-text {
+    margin: 0.5rem 0 0 0;
+    text-transform: uppercase;
+}
+
+.title-text, .info-text {
+    margin: 0 0 1rem 0;
+}

@@ -20,17 +20,16 @@ class App extends Component {
     fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibition.id}&page=1&per_page=100`)
       .then(res => res.json())
       .then(data => {
-          this.setState({ exhibits: data.objects })
+        this.setState({ exhibits: data.objects })
       })
       .catch(err => console.log(err))
   }
-
 
   componentDidMount = () => {
     fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=${API.apiKey}&page=1&per_page=100`)
       .then(res => res.json())
       .then(data => {
-        this.setState({ exhibitions: data.exhibitions})
+        this.setState({ exhibitions: data.exhibitions })
       })
       .catch(err => console.log(err))
   }
@@ -39,7 +38,6 @@ class App extends Component {
 
     const exhibits = this.state.exhibits
     const exhibitions = this.state.exhibitions
-
     const conditionalRender = 
       this.state.exhibits.length === 0 ?
         this.state.exhibitions.length !== 0 ?
