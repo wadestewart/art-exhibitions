@@ -3,12 +3,12 @@
     flex-flow: row wrap;
 }
 
-.exhibit-text {
+.exhibit-title-text {
     flex: 1 0 33.33333333%;
     padding: 0 1rem;
 }
 
-.title {
+.exhibit-title {
     color: #f00;
     margin: 0.5rem 0;
 }
