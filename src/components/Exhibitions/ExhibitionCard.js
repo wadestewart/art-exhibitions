@@ -5,7 +5,7 @@ import './Exhibitions.css'
 function ExhibitionsCard (props) {
     return (
         <div className="exhibition" onClick={props.onDetailsClick}>
-            <h2>{props.title}</h2>
+            <h3 className="current">{props.title}</h3>
         </div>
     )
 }

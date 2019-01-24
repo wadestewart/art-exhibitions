@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { LazyLoadComponent } from 'react-lazy-load-image-component'
 
 import ExhibitionCard from './ExhibitionCard'
 import './Exhibitions.css'
@@ -23,11 +22,9 @@ class Exhibitions extends Component {
     })
 
     return (
-        <div className="exhibitions">
-          <LazyLoadComponent>
-            {exhibitions}
-          </LazyLoadComponent>
-        </div>
+      <div className="exhibitions">
+          {exhibitions}
+      </div>
     )
   }
 }

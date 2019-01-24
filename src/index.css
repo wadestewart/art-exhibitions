@@ -6,6 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
   font-family: "Josefin Sans", Helvetica, Arial, sans-serif;
 }

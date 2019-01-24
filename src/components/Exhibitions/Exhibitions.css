@@ -1,7 +1,7 @@
 
 /* Animation from this codepen: https://codepen.io/P1N2O/pen/pyBNzX?editors=0100 */
 .exhibitions {
-    align-items: center;
+    /* align-items: center; */
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 400% 400%;
 	color: #fff;
@@ -51,5 +51,9 @@
 }
 
 .exhibition {
-    cursor: pointer;
+	cursor: pointer;
+}
+
+.current:hover {
+	color: gold;
 }

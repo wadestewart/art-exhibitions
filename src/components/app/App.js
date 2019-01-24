@@ -1,19 +1,25 @@
 import React, { Component } from 'react'
 
 import { API } from '../../config'
+import Header from '../Header/Header'
 import Exhibitions from '../Exhibitions/Exhibitions'
-import Exhibits from '../Exhibits/Exhibits';
+import Exhibits from '../Exhibits/Exhibits'
 
 class App extends Component {
   constructor() {
     super()
 
+    this.handleReload = this.handleReload.bind(this)
     this.handleDetailsClick = this.handleDetailsClick.bind(this)
 
     this.state = {
         exhibits:     [],
         exhibitions:  []
     }
+  }
+
+  handleReload = () => {
+    this.setState({ exhibits: [] })
   }
 
   handleDetailsClick = (exhibition) => {
@@ -54,6 +60,9 @@ class App extends Component {
 
     return (
       <div>
+        <Header
+          onReload={this.handleReload}
+        />
         {conditionalRender}
       </div>
     )
