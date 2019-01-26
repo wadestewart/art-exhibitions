@@ -6,9 +6,7 @@ import './Exhibits.css'
 class Exhibit extends Component {
 
     render() {
-        // console.log(this.props)
         const exhibits = this.props.exhibits.map(exhibit => {
-            // console.log(exhibit)
             
             // Ternary to establish is Description is available for render
             let description =

@@ -10,7 +10,7 @@ class App extends Component {
     super()
 
     this.handleReload = this.handleReload.bind(this)
-    this.handleDetailsClick = this.handleDetailsClick.bind(this)
+    this.handleExhibitionClick = this.handleExhibitionClick.bind(this)
 
     this.state = {
         exhibits:     [],
@@ -22,7 +22,7 @@ class App extends Component {
     this.setState({ exhibits: [] })
   }
 
-  handleDetailsClick = (exhibition) => {
+  handleExhibitionClick = (exhibition) => {
     fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibition.id}&page=1&per_page=100`)
       .then(res => res.json())
       .then(data => {
@@ -41,6 +41,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.exhibits)
 
     const exhibits = this.state.exhibits
     const exhibitions = this.state.exhibitions
@@ -49,7 +50,7 @@ class App extends Component {
         this.state.exhibitions.length !== 0 ?
           <Exhibitions
             exhibitions={exhibitions}
-            onDetailsClick={this.handleDetailsClick}
+            onExhibitionClick={this.handleExhibitionClick}
           />
         :
           null

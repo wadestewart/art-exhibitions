@@ -16,7 +16,7 @@ class Exhibitions extends Component {
             text={exhibition.text}
             start={exhibition.date_start}
             end={exhibition.date_end}
-            onDetailsClick={() => this.props.onDetailsClick(exhibition)}
+            onExhibitionClick={() => this.props.onExhibitionClick(exhibition)}
           />
       )
     })

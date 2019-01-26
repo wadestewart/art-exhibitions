@@ -3,7 +3,7 @@ import React from 'react'
 import './Exhibits.css'
 
 function ExhibitsCard(props) {
-    console.log(props)
+    // console.log(props)
     
     if (props.image !== null && props.description !== null) {
         return (
