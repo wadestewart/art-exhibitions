@@ -5,6 +5,7 @@ import ExhibitsCard from './ExhibitsCard'
 class Exhibit extends Component {
 
     render() {
+        // console.log(this.state.largeImgUrl)
         const exhibits = this.props.exhibits.map(exhibit => {
             
             // Ternary to establish is Description is available for render
@@ -35,11 +36,15 @@ class Exhibit extends Component {
                             exhibit.title_raw :
                         null
 
+            let largeImgUrl =
+                exhibit.images[0] !== undefined ? exhibit.images[0].n.url : null
+
             return (
                 <ExhibitsCard
                     description={description}
                     image={imgUrl}
                     key={exhibit.id}
+                    largeImg={largeImgUrl}
                     medium={medium}
                     title={title}
                     text={text}
@@ -48,7 +53,7 @@ class Exhibit extends Component {
         })
 
         return (
-            <div className="exhibits">
+            <div>
                 {exhibits}
             </div>  
         )

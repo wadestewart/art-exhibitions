@@ -6,7 +6,6 @@ import './Exhibitions.css'
 class Exhibitions extends Component {
 
   render() {
-
     const exhibitions = this.props.exhibitions.map(exhibition => {
       return (
           <ExhibitionCard

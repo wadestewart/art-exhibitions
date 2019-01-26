@@ -6,7 +6,7 @@ const Header = (props) => (
     <div className="navbar-fixed">
         <nav className="nav-wrapper cyan lighten-2">
             <div className="container">
-                <div class="valign-wrapper">
+                <div className="valign-wrapper">
                     <p className="brand-logo right" onClick={props.onReload}>Cooper Hewitt</p>
                 </div>
             </div>

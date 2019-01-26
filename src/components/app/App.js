@@ -41,21 +41,18 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.exhibits)
 
     const exhibits = this.state.exhibits
     const exhibitions = this.state.exhibitions
     const conditionalRender = 
-      this.state.exhibits.length === 0 ?
-        this.state.exhibitions.length !== 0 ?
-          <Exhibitions
+      this.state.exhibits.length === 0 
+      ? this.state.exhibitions.length !== 0
+        ? <Exhibitions
             exhibitions={exhibitions}
             onExhibitionClick={this.handleExhibitionClick}
           />
-        :
-          null
-      :
-        <Exhibits
+        : null
+      : <Exhibits
           exhibits={exhibits}
         />
 
