@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './Exhibits.css'
-
 function ExhibitsCard(props) {
     // console.log(props)
     

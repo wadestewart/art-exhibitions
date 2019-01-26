@@ -1,0 +1,59 @@
+
+/* Animation from this codepen: https://codepen.io/P1N2O/pen/pyBNzX?editors=0100 */
+.exhibitions {
+    /* align-items: center; */
+	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+	background-size: 400% 400%;
+	color: #fff;
+    display: flex;
+    flex-flow: column nowrap;
+    font-weight: bold;
+    text-transform: uppercase;
+	animation: Gradient 10s ease infinite;
+	-moz-animation: Gradient 10s ease infinite;
+	-webkit-animation: Gradient 10s ease infinite;
+}
+
+@-webkit-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@-moz-keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.exhibition {
+	cursor: pointer;
+}
+
+.current:hover {
+	color: gold;
+}

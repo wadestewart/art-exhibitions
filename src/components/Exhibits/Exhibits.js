@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import ExhibitsCard from './ExhibitsCard'
-import './Exhibits.css'
 
 class Exhibit extends Component {
 
