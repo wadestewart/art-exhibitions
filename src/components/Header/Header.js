@@ -7,9 +7,7 @@ const Header = (props) => (
         <nav className="nav-wrapper cyan lighten-2">
             <div className="valign-wrapper">
                 <p className="brand-logo right">Cooper Hewitt Exhibitions</p>
-                <ul className="left">
-                    <li><h6 onClick={props.onReload}>Back To Exhibitions List</h6></li>
-                </ul>
+                <i className="material-icons">arrow_back</i>
             </div>
         </nav>
     </div>
