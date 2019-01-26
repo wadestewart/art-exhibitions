@@ -1,4 +1,8 @@
 nav .brand-logo {
+    padding: 0 2rem 2rem 0 !important;
+}
+
+h6 {
     cursor: pointer;
-    padding-right: 2rem !important;
+    padding: 2rem 2rem 0 0 !important;
 }

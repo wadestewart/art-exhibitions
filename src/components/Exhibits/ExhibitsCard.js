@@ -1,19 +1,21 @@
 import React, { Component } from 'react'
 
+import SmallImage from '../SmallImage/SmallImage'
 import './Exhibits.css'
 
 class ExhibitsCard extends Component {
 
     render() {
+        console.log(this.props)
         let exhibit
 
         if (this.props.image !== null && this.props.description !== null) {
             exhibit = (
                 <div>
                     <div className="card horizontal">
-                        <div className="card-image">
-                            <img src={this.props.image} alt="Piece of Artwork" />
-                        </div>
+                        <SmallImage
+                            image={this.props.image}
+                        />
                         <div className="card-stacked">
                             <div className="card-content">
                                 <h6>Title:</h6>
@@ -32,7 +34,9 @@ class ExhibitsCard extends Component {
                 <div>
                     <div className="card horizontal">
                         <div className="card-image">
-                            <img src={this.props.image} alt="Piece of Artwork" />
+                            <SmallImage
+                                image={this.props.image}
+                            />
                         </div>
                         <div className="card-stacked">
                             <div className="card-content">
@@ -53,9 +57,6 @@ class ExhibitsCard extends Component {
 
         return (
             <div>
-                {/* <ArtImage
-
-                /> */}
                 {exhibit}
             </div>
         )
