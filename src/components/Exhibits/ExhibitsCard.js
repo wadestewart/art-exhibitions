@@ -6,16 +6,17 @@ import './Exhibits.css'
 class ExhibitsCard extends Component {
 
     render() {
-        console.log(this.props)
         let exhibit
 
         if (this.props.image !== null && this.props.description !== null) {
             exhibit = (
                 <div>
                     <div className="card horizontal">
-                        <SmallImage
-                            image={this.props.image}
-                        />
+                        <div className="card-image">
+                            <SmallImage
+                                image={this.props.image}
+                            />
+                        </div>
                         <div className="card-stacked">
                             <div className="card-content">
                                 <h6>Title:</h6>

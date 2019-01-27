@@ -4,9 +4,14 @@ import './Exhibitions.css'
 
 function ExhibitionsCard (props) {
     return (
-        <div className="exhibition">
+        <div>
             <h5 className="current" onClick={props.onExhibitionClick}>{props.title}</h5>
         </div>
+        // <div className="card horizontal">
+        //     <div className="card-content">
+        //         <h5 className="current" onClick={props.onExhibitionClick}>{props.title}</h5>
+        //     </div>
+        // </div>
     )
 }
 

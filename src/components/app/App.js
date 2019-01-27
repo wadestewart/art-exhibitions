@@ -13,8 +13,9 @@ class App extends Component {
     this.handleExhibitionClick = this.handleExhibitionClick.bind(this)
 
     this.state = {
-        exhibits:     [],
-        exhibitions:  []
+        exhibits:       [],
+        exhibitions:    [],
+        exhibition_id:  []
     }
   }
 
@@ -31,12 +32,19 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  componentDidMount = () => {
+  componentDidMount = (exhibition) => {
     fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=${API.apiKey}&page=1&per_page=100`)
       .then(res => res.json())
       .then(data => {
         this.setState({ exhibitions: data.exhibitions })
       })
+      // .then(
+      //   fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibition.id}&page=1&per_page=100`)
+      //     .then(res => res.json())
+      //     .then(data => {
+      //       this.setState({ exhibits: data.objects })
+      //     })
+      // )
       .catch(err => console.log(err))
   }
 

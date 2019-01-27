@@ -4,6 +4,17 @@ import ExhibitionCard from './ExhibitionCard'
 import './Exhibitions.css'
 
 class Exhibitions extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      ingUrls:  []
+    }
+  }
+
+  // componentDidMount = () {
+  //   let exhibitions = this.props
+  // }
 
   render() {
     const exhibitions = this.props.exhibitions.map(exhibition => {

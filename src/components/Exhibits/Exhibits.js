@@ -7,6 +7,7 @@ class Exhibit extends Component {
     render() {
         // console.log(this.state.largeImgUrl)
         const exhibits = this.props.exhibits.map(exhibit => {
+            console.log(exhibit)
             
             // Ternary to establish is Description is available for render
             let description =
