@@ -15,7 +15,7 @@ class App extends Component {
     this.state = {
         exhibits:       [],
         exhibitions:    [],
-        exhibition_id:  []
+        exhibitionIDs:  []
     }
   }
 
@@ -32,19 +32,12 @@ class App extends Component {
       .catch(err => console.log(err))
   }
 
-  componentDidMount = (exhibition) => {
-    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=${API.apiKey}&page=1&per_page=100`)
+  componentDidMount = () => {
+    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=${API.apiKey}&page=1&per_page=5`)
       .then(res => res.json())
       .then(data => {
         this.setState({ exhibitions: data.exhibitions })
       })
-      // .then(
-      //   fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibition.id}&page=1&per_page=100`)
-      //     .then(res => res.json())
-      //     .then(data => {
-      //       this.setState({ exhibits: data.objects })
-      //     })
-      // )
       .catch(err => console.log(err))
   }
 

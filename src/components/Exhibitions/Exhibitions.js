@@ -4,17 +4,6 @@ import ExhibitionCard from './ExhibitionCard'
 import './Exhibitions.css'
 
 class Exhibitions extends Component {
-  constructor() {
-    super()
-
-    this.state = {
-      ingUrls:  []
-    }
-  }
-
-  // componentDidMount = () {
-  //   let exhibitions = this.props
-  // }
 
   render() {
     const exhibitions = this.props.exhibitions.map(exhibition => {
@@ -24,8 +13,6 @@ class Exhibitions extends Component {
             id={exhibition.id}
             title={exhibition.title}
             text={exhibition.text}
-            start={exhibition.date_start}
-            end={exhibition.date_end}
             onExhibitionClick={() => this.props.onExhibitionClick(exhibition)}
           />
       )
