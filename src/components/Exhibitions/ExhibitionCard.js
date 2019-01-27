@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { API } from '../../config'
 import './Exhibitions.css'
+import SquareImage from '../SquareImage/SquareImage';
 
 class ExhibitionsCard extends Component {
 
@@ -22,16 +23,19 @@ class ExhibitionsCard extends Component {
     }
 
     render() {
-        console.log(this.state.imgUrls)
         return (
-            <div>
-                <h5 className="current" onClick={this.props.onExhibitionClick}>{this.props.title}</h5>
+            <div className="row s3">
+                <div className="card horizontal">
+                    <div className="card-image">
+                        <SquareImage
+                            image={this.state.imgUrls}
+                        />
+                    </div>
+                    <div className="card-content">
+                        <h5 className="current" onClick={this.props.onExhibitionClick}>{this.props.title}</h5>
+                    </div>
+                </div>
             </div>
-            // <div className="card horizontal">
-            //     <div className="card-content">
-            //         <h5 className="current" onClick={props.onExhibitionClick}>{props.title}</h5>
-            //     </div>
-            // </div>
         )
     }
 }

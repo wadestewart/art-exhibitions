@@ -14,8 +14,7 @@ class App extends Component {
 
     this.state = {
         exhibits:       [],
-        exhibitions:    [],
-        exhibitionIDs:  []
+        exhibitions:    []
     }
   }
 
