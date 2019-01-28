@@ -1,13 +1,11 @@
 
 /* Animation from this codepen: https://codepen.io/P1N2O/pen/pyBNzX?editors=0100 */
 .exhibitions {
-    /* align-items: center; */
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-	background-size: 400% 400%;
+	background-size: 500% 500%;
 	color: #fff;
-    display: flex;
-    flex-flow: column nowrap;
-    font-weight: bold;
+	font-weight: bold;
+	height: 100%;
     text-transform: uppercase;
 	animation: Gradient 5s ease infinite;
 	-moz-animation: Gradient 5s ease infinite;
@@ -50,13 +48,21 @@
 	}
 }
 
-.current {
+.card {
 	cursor: pointer;
-	display: inline-block;
-	margin: 0;
-	padding: 1rem 0;
 }
 
-.current:hover {
+.card-content:hover > .black-text {
 	color: gold;
+}
+
+.card-content > p {
+	font-size: 0.84rem;
+	text-transform: none;
+}
+
+.card-title {
+	color: #000 !important;
+	font-size: 0.75rem !important;
+	padding: 0 !important;
 }

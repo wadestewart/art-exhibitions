@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
 import { API } from '../../config'
+
+import SquareImage from '../SquareImage/SquareImage'
 import './Exhibitions.css'
-import SquareImage from '../SquareImage/SquareImage';
 
 class ExhibitionsCard extends Component {
 
@@ -23,18 +24,30 @@ class ExhibitionsCard extends Component {
     }
 
     render() {
-        return (
-            <div className="row s3">
-                <div className="card horizontal">
-                    <div className="card-image">
-                        <SquareImage
-                            image={this.state.imgUrls}
-                        />
-                    </div>
-                    <div className="card-content">
-                        <h5 className="current" onClick={this.props.onExhibitionClick}>{this.props.title}</h5>
+        let exhibitionCard =
+            this.state.imgUrls !== []
+            ?   <div className="row">
+                    <div className="col s10 push-s1">
+                        <div className="card small horizontal hoverable" onClick={this.props.onExhibitionClick}>
+                            <div className="card-image" onClick={this.props.onExhibitionClick}>
+                                <SquareImage
+                                    image={this.state.imgUrls}
+                                />
+                            </div>
+                            <div className="card-stacked">
+                                <div className="card-content grey lighten-3">
+                                    <h5 className="black-text">{this.props.title}</h5>
+                                    <p className="black-text">{this.props.text}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            : null
+
+        return (
+            <div>
+                {exhibitionCard}
             </div>
         )
     }
