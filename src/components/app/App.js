@@ -32,7 +32,7 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=${API.apiKey}&page=1&per_page=5`)
+    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getList&access_token=${API.apiKey}&page=1&per_page=10`)
       .then(res => res.json())
       .then(data => {
         this.setState({ exhibitions: data.exhibitions })

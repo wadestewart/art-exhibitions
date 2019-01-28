@@ -6,15 +6,20 @@ import SquareImage from '../SquareImage/SquareImage'
 import './Exhibitions.css'
 
 class ExhibitionsCard extends Component {
+    constructor() {
+        super()
 
-    state = {
-        imgUrls: []
+        this.state = {
+            imgUrls: []
+        }
     }
+
 
     componentDidMount = () => {
         fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${this.props.id}&has_images=true&page=1&per_page=1`)
             .then(res => res.json())
             .then(data => {
+                console.log(data)
                 let newImage = data.objects[0].images[0].sq.url
                 this.setState ({
                     imgUrls: this.state.imgUrls.concat(newImage)
@@ -36,7 +41,7 @@ class ExhibitionsCard extends Component {
                             </div>
                             <div className="card-stacked">
                                 <div className="card-content grey lighten-3">
-                                    <h5 className="black-text">{this.props.title}</h5>
+                                    <h6 className="black-text">{this.props.title}</h6>
                                     <p className="black-text">{this.props.text}</p>
                                 </div>
                             </div>

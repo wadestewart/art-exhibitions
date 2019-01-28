@@ -56,8 +56,12 @@
 	color: gold;
 }
 
+/* .card-content h5 {
+
+} */
+
 .card-content > p {
-	font-size: 0.84rem;
+	font-size: 0.75rem;
 	text-transform: none;
 }
 
