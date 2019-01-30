@@ -40,7 +40,6 @@ class ExhibitionsCard extends Component {
                         <div className="card-stacked">
                             <div className="card-content grey lighten-3">
                                 <h6 className="black-text flow-text center-align">{this.props.title}</h6>
-                                {/* <p className="black-text">{this.props.text}</p> */}
                             </div>
                         </div>
                     </div>
