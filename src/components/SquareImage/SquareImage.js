@@ -2,7 +2,7 @@ import React from 'react'
 
 const SquareImage = (props) => {
     return (
-        <img src={props.image} alt="Piece of Artwork" />
+        <img className="center-align" src={props.image} alt="Piece of Artwork" />
     )
 }
 

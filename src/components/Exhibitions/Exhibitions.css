@@ -3,10 +3,8 @@
 .exhibitions {
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 500% 500%;
-	color: #fff;
 	font-weight: bold;
 	height: 100%;
-    text-transform: uppercase;
 	animation: Gradient 5s ease infinite;
 	-moz-animation: Gradient 5s ease infinite;
 	-webkit-animation: Gradient 5s ease infinite;
@@ -53,20 +51,23 @@
 }
 
 .card-content:hover > .black-text {
-	color: gold;
+	color: #E73C7E !important;
 }
 
-/* .card-content h5 {
-
-} */
+.card-image > img {
+	height: 250px !important;
+	margin: 0 !important;
+	width: 250px !important;
+}
 
 .card-content > p {
 	font-size: 0.75rem;
-	text-transform: none;
 }
 
-.card-title {
+h5 {
 	color: #000 !important;
-	font-size: 0.75rem !important;
+	font-size: 1rem !important;
 	padding: 0 !important;
+	text-transform: uppercase;
+
 }

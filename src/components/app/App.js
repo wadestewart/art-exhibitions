@@ -41,6 +41,8 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.exhibitions)
+    console.log(this.state.exhibits)
     const exhibits = this.state.exhibits
     const exhibitions = this.state.exhibitions
     const conditionalRender = 

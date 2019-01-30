@@ -16,10 +16,9 @@ class ExhibitionsCard extends Component {
 
 
     componentDidMount = () => {
-        fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${this.props.id}&has_images=true&page=1&per_page=1`)
+        fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${this.props.id}&has_images=true&page=1&per_page=100`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 let newImage = data.objects[0].images[0].sq.url
                 this.setState ({
                     imgUrls: this.state.imgUrls.concat(newImage)
@@ -29,11 +28,12 @@ class ExhibitionsCard extends Component {
     }
 
     render() {
+        console.log(this.state.imgUrls)
         let exhibitionCard =
             this.state.imgUrls !== []
             ?   <div className="row">
-                    <div className="col s10 push-s1">
-                        <div className="card small horizontal hoverable" onClick={this.props.onExhibitionClick}>
+                    <div className="col m3">
+                        <div className="card hoverable" onClick={this.props.onExhibitionClick}>
                             <div className="card-image" onClick={this.props.onExhibitionClick}>
                                 <SquareImage
                                     image={this.state.imgUrls}
@@ -41,8 +41,8 @@ class ExhibitionsCard extends Component {
                             </div>
                             <div className="card-stacked">
                                 <div className="card-content grey lighten-3">
-                                    <h6 className="black-text">{this.props.title}</h6>
-                                    <p className="black-text">{this.props.text}</p>
+                                    <h5 className="black-text flow-text center-align">{this.props.title}</h5>
+                                    {/* <p className="black-text">{this.props.text}</p> */}
                                 </div>
                             </div>
                         </div>
