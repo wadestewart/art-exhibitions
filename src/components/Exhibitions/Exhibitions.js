@@ -20,7 +20,9 @@ class Exhibitions extends Component {
 
     return (
       <div className="exhibitions">
+        <div className="row">
           {exhibitions}
+        </div>
       </div>
     )
   }

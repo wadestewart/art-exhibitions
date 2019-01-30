@@ -31,19 +31,17 @@ class ExhibitionsCard extends Component {
         console.log(this.state.imgUrls)
         let exhibitionCard =
             this.state.imgUrls !== []
-            ?   <div className="row">
-                    <div className="col m3">
-                        <div className="card hoverable" onClick={this.props.onExhibitionClick}>
-                            <div className="card-image" onClick={this.props.onExhibitionClick}>
-                                <SquareImage
-                                    image={this.state.imgUrls}
-                                />
-                            </div>
-                            <div className="card-stacked">
-                                <div className="card-content grey lighten-3">
-                                    <h5 className="black-text flow-text center-align">{this.props.title}</h5>
-                                    {/* <p className="black-text">{this.props.text}</p> */}
-                                </div>
+            ?   <div className="col m3">
+                    <div className="card hoverable" onClick={this.props.onExhibitionClick}>
+                        <div className="card-image" onClick={this.props.onExhibitionClick}>
+                            <SquareImage
+                                image={this.state.imgUrls}
+                            />
+                        </div>
+                        <div className="card-stacked">
+                            <div className="card-content grey lighten-3">
+                                <h6 className="black-text flow-text center-align">{this.props.title}</h6>
+                                {/* <p className="black-text">{this.props.text}</p> */}
                             </div>
                         </div>
                     </div>
