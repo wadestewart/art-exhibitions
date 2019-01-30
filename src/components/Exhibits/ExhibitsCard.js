@@ -10,8 +10,8 @@ class ExhibitsCard extends Component {
 
         if (this.props.image !== null && this.props.description !== null) {
             exhibit = (
-                <div>
-                    <div className="card horizontal">
+                <div className="col m4">
+                    <div className="card">
                         <div className="card-image">
                             <SmallImage
                                 image={this.props.image}
@@ -32,8 +32,8 @@ class ExhibitsCard extends Component {
             )
         } else if (this.props.image !== null && this.props.text !== null) {
             exhibit = (
-                <div>
-                    <div className="card horizontal">
+                <div className="col m4">
+                    <div className="card">
                         <div className="card-image">
                             <SmallImage
                                 image={this.props.image}

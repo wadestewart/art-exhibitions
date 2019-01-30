@@ -54,9 +54,11 @@ class Exhibit extends Component {
         })
 
         return (
-            <div>
-                {exhibits}
-            </div>  
+            <div className="exhibits">
+                <div className="row">
+                    {exhibits}
+                </div>  
+            </div>
         )
     }
 }
