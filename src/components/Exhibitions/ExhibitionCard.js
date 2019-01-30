@@ -16,7 +16,7 @@ class ExhibitionsCard extends Component {
 
 
     componentDidMount = () => {
-        fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${this.props.id}&has_images=true&page=1&per_page=100`)
+        fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${this.props.id}&has_images=true`)
             .then(res => res.json())
             .then(data => {
                 let newImage = data.objects[0].images[0].sq.url
@@ -28,7 +28,6 @@ class ExhibitionsCard extends Component {
     }
 
     render() {
-        console.log(this.state.imgUrls)
         let exhibitionCard =
             this.state.imgUrls !== []
             ?   <div className="col m3">

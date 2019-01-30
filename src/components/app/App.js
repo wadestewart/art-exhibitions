@@ -23,7 +23,7 @@ class App extends Component {
   }
 
   handleExhibitionClick = (exhibition) => {
-    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibition.id}&page=1&per_page=100`)
+    fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${exhibition.id}&page=1&per_page=20`)
       .then(res => res.json())
       .then(data => {
         this.setState({ exhibits: data.objects })
@@ -41,8 +41,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.exhibitions)
-    console.log(this.state.exhibits)
     const exhibits = this.state.exhibits
     const exhibitions = this.state.exhibitions
     const conditionalRender = 
