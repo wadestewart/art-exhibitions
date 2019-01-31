@@ -14,8 +14,7 @@ class App extends Component {
 
     this.state = {
         artworks:       [],
-        exhibitions:    [],
-        isLoading:      false
+        exhibitions:    []
     }
   }
 
@@ -46,6 +45,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.artworks)
     const artworks = this.state.artworks
     const exhibitions = this.state.exhibitions
     const conditionalRender = 
