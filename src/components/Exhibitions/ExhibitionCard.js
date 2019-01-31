@@ -1,30 +1,45 @@
+// Import dependencies
 import React, { Component } from 'react'
 
+// Import API key from config file
 import { API } from '../../config'
 
-import SquareImage from '../SquareImage/SquareImage'
+// Import components
+import SquareImage from '../squareImage/SquareImage'
 import './Exhibitions.css'
 
 class ExhibitionsCard extends Component {
-    constructor() {
-        super()
+    // These variables are to handle unmounting a component when the user clicks away from exhibits https://medium.freecodecamp.org/how-to-work-with-react-the-right-way-to-avoid-some-common-pitfalls-fc9eb5e34d9e
+    controller = new AbortController()
+    signal = this.controller.signal
 
-        this.state = {
-            imgUrls: []
-        }
+    state = {
+        isLoading:  false,
+        imgUrls:    []
     }
 
-
     componentDidMount = () => {
-        fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${this.props.id}&has_images=true`)
-            .then(res => res.json())
-            .then(data => {
-                let newImage = data.objects[0].images[0].sq.url
-                this.setState ({
-                    imgUrls: this.state.imgUrls.concat(newImage)
-                })
+        this.fetchSingleExhibit()
+    }
+
+    componentWillUnmount = () => {
+        this.controller.abort()
+    }
+
+    fetchSingleExhibit = () => {
+        // const controller = new AbortController()
+        const signal = this.controller.signal
+        this.setState({ isLoading: true})
+        fetch(`https://api.collection.cooperhewitt.org/rest/?method=cooperhewitt.exhibitions.getObjects&access_token=${API.apiKey}&exhibition_id=${this.props.id}&has_images=true`, { signal })
+        .then(res => res.json())
+        .then(data => {
+            let newImage = data.objects[0].images[0].sq.url
+            this.setState ({
+                isLoading: true,
+                imgUrls: this.state.imgUrls.concat(newImage)
             })
-            .catch(err => console.log(err))
+        })
+        .catch(err => err ? console.log(err.message) : this.setState({ isLoading: false }))
     }
 
     render() {

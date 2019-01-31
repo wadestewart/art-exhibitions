@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 
-import SmallImage from '../SmallImage/SmallImage'
+import SmallImage from '../smallImage/SmallImage'
 import Player from '../player/Player'
-import './Exhibits.css'
+import './Artworks.css'
 
-class ExhibitsCard extends Component {
+class ArtworkCard extends Component {
 
     render() {
-        let exhibit
+        let artwork
 
         if (this.props.image !== null && this.props.description !== null && this.props.description.startsWith("https") === true) {
-            exhibit = (
+            artwork = (
                 <div className="col m4">
                     <div className="card">
                         <div className="card-image">
@@ -32,7 +32,7 @@ class ExhibitsCard extends Component {
                 </div>
             )
         } else if (this.props.image !== null && this.props.description !== null) {
-            exhibit = (
+            artwork = (
                 <div className="col m4">
                     <div className="card">
                         <div className="card-image">
@@ -54,7 +54,7 @@ class ExhibitsCard extends Component {
                 </div>
             )
         } else if (this.props.image !== null && this.props.text !== null) {
-            exhibit = (
+            artwork = (
                 <div className="col m4">
                     <div className="card">
                         <div className="card-image">
@@ -81,15 +81,11 @@ class ExhibitsCard extends Component {
 
         return (
             <div>
-                {exhibit}
+                {artwork}
             </div>
         )
     }
     
 }
 
-export default ExhibitsCard
-
-// else if (this.props.image !== null && this.props.description !== null && this.props.description === regex){
-//     console.log('true!')
-// }
+export default ArtworkCard
