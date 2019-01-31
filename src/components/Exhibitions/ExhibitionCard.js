@@ -9,9 +9,9 @@ import SquareImage from '../squareImage/SquareImage'
 import './Exhibitions.css'
 
 class ExhibitionsCard extends Component {
-    // These variables are to handle unmounting a component when the user clicks away from exhibits https://medium.freecodecamp.org/how-to-work-with-react-the-right-way-to-avoid-some-common-pitfalls-fc9eb5e34d9e
+    // These variables are to handle unmounting a component when the user clicks away from exhibits [1]
     controller = new AbortController()
-    signal = this.controller.signal
+    // signal = this.controller.signal
 
     state = {
         isLoading:  false,
@@ -19,14 +19,16 @@ class ExhibitionsCard extends Component {
     }
 
     componentDidMount = () => {
-        this.fetchSingleExhibit()
+        this.fetchSingleExhibition()
     }
 
+    // This handles aborting the fetch call if a user navigates away before finished [1]
     componentWillUnmount = () => {
         this.controller.abort()
     }
 
-    fetchSingleExhibit = () => {
+    // Fetching data for individual exhibition
+    fetchSingleExhibition = () => {
         // const controller = new AbortController()
         const signal = this.controller.signal
         this.setState({ isLoading: true})
@@ -39,10 +41,11 @@ class ExhibitionsCard extends Component {
                 imgUrls: this.state.imgUrls.concat(newImage)
             })
         })
-        .catch(err => err ? console.log(err.message) : this.setState({ isLoading: false }))
+        .catch(err => console.log(err.message))
     }
 
     render() {
+        console.log(this.state.isLoading)
         let exhibitionCard =
             this.state.imgUrls !== []
             ?   <div className="col m3">
@@ -70,3 +73,9 @@ class ExhibitionsCard extends Component {
 }
 
 export default ExhibitionsCard
+
+// notes on sources:
+// 1: https://developer.mozilla.org/en-US/docs/Web/API/AbortController
+// https://medium.freecodecamp.org/how-to-work-with-react-the-right-way-to-avoid-some-common-pitfalls-fc9eb5e34d9e
+
+

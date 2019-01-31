@@ -42,7 +42,7 @@ class App extends Component {
   }
   
   handleReload = () => {
-    this.setState({ exhibits: [] })
+    this.setState({ artworks: [] })
   }
 
   render() {

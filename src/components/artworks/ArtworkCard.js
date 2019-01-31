@@ -13,7 +13,7 @@ class ArtworkCard extends Component {
             artwork = (
                 <div className="col m4">
                     <div className="card">
-                        <div className="card-image">
+                        <div id="artwork-img" className="card-image">
                             <SmallImage
                                 image={this.props.image}
                             />
@@ -35,7 +35,7 @@ class ArtworkCard extends Component {
             artwork = (
                 <div className="col m4">
                     <div className="card">
-                        <div className="card-image">
+                        <div id="artwork-img" className="card-image">
                             <SmallImage
                                 image={this.props.image}
                             />
@@ -57,7 +57,7 @@ class ArtworkCard extends Component {
             artwork = (
                 <div className="col m4">
                     <div className="card">
-                        <div className="card-image">
+                        <div id="artwork-img" className="card-image">
                             <SmallImage
                                 image={this.props.image}
                             />

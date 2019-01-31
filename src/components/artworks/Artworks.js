@@ -6,7 +6,7 @@ class Artworks extends Component {
 
     render() {
         // console.log(this.state.largeImgUrl)
-        const artworks = this.props.exhibits.map(artwork => {
+        const artworks = this.props.artworks.map(artwork => {
             // console.log(exhibit)
             
             // Ternary to establish is Description is available for render
@@ -54,7 +54,7 @@ class Artworks extends Component {
         })
 
         return (
-            <div className="exhibits">
+            <div className="artworks">
                 <div className="row">
                     {artworks}
                 </div>  

@@ -1,5 +1,5 @@
 /* Animation from this codepen: https://codepen.io/P1N2O/pen/pyBNzX?editors=0100 */
-.exhibits {
+.artworks {
 	background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 	background-size: 500% 500%;
 	font-weight: bold;
@@ -43,6 +43,10 @@
 	100% {
 		background-position: 0% 50%
 	}
+}
+
+#artwork-img {
+	width: fit-content !important;
 }
 
 .medium {
